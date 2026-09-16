@@ -101,7 +101,7 @@ export type Complaint = {
   message: string;
   notes: string;
   history: HistoryEntry[];
-  conversationId?: string;
+  conversationId?: string | undefined;
 };
 
 /* ------------ deterministic pseudo-random ------------ */
