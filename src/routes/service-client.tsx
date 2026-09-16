@@ -19,7 +19,6 @@ import {
 } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
 
-import { AiAssistant } from "@/components/aha/AiAssistant";
 import { PageShell } from "@/components/aha/PageShell";
 import { Magnetic } from "@/components/aha/Magnetic";
 import { notify } from "@/components/aha/notify";
@@ -215,7 +214,6 @@ function ServiceClientPage() {
         )}
       </AnimatePresence>
 
-      <AiAssistant />
     </PageShell>
   );
 }
