@@ -22,12 +22,13 @@ export function PageShell({
   return (
     <div className="relative min-h-screen">
       <Backdrop />
-      <div className="relative z-10">
+      <div className="relative z-10 flex min-h-screen flex-col">
         <AppHeader />
         <motion.main
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.25, ease: "easeOut" }}
+          className="flex flex-1 flex-col"
         >
           <section className="hero-band border-b">
             <div className="mx-auto flex max-w-7xl flex-col gap-4 px-4 py-10 sm:px-6 md:flex-row md:items-end md:justify-between md:py-14">
@@ -46,7 +47,7 @@ export function PageShell({
             </div>
           </section>
 
-          <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 md:py-10">{children}</div>
+          <div className="mx-auto w-full max-w-7xl flex-1 px-4 py-8 sm:px-6 md:py-10">{children}</div>
 
           <footer className="border-t">
             <div className="text-muted-foreground mx-auto flex max-w-7xl flex-col gap-4 px-4 py-8 text-xs sm:px-6 md:flex-row md:items-center md:justify-between">
