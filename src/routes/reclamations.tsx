@@ -3,7 +3,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpDown, ExternalLink, RotateCcw, Search, X } from "lucide-react";
 import { useMemo, useState } from "react";
 
-import { AiAssistant } from "@/components/aha/AiAssistant";
 import { CountUp } from "@/components/aha/CountUp";
 import { PageShell } from "@/components/aha/PageShell";
 import { notify } from "@/components/aha/notify";
@@ -498,7 +497,6 @@ function ComplaintsPage() {
         )}
       </AnimatePresence>
 
-      <AiAssistant />
     </PageShell>
   );
 }

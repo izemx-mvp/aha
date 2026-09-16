@@ -10,7 +10,6 @@ import {
 } from "lucide-react";
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
-import { AiAssistant } from "@/components/aha/AiAssistant";
 import { CountUp } from "@/components/aha/CountUp";
 import { PageShell } from "@/components/aha/PageShell";
 import { useAha } from "@/lib/aha/store";
@@ -234,7 +233,6 @@ function DashboardPage() {
         </motion.section>
       </div>
 
-      <AiAssistant />
     </PageShell>
   );
 }
