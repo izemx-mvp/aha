@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as ReclamationsRouteImport } from './routes/reclamations'
+import { Route as ServiceClientRouteImport } from './routes/service-client'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,35 +29,44 @@ const ReclamationsRoute = ReclamationsRouteImport.update({
   path: '/reclamations',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServiceClientRoute = ServiceClientRouteImport.update({
+  id: '/service-client',
+  path: '/service-client',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
   '/reclamations': typeof ReclamationsRoute
+  '/service-client': typeof ServiceClientRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
   '/reclamations': typeof ReclamationsRoute
+  '/service-client': typeof ServiceClientRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/dashboard': typeof DashboardRoute
   '/reclamations': typeof ReclamationsRoute
+  '/service-client': typeof ServiceClientRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/dashboard' | '/reclamations'
+  fullPaths: '/' | '/dashboard' | '/reclamations' | '/service-client'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/dashboard' | '/reclamations'
-  id: '__root__' | '/' | '/dashboard' | '/reclamations'
+  to: '/' | '/dashboard' | '/reclamations' | '/service-client'
+  id: '__root__' | '/' | '/dashboard' | '/reclamations' | '/service-client'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DashboardRoute: typeof DashboardRoute
   ReclamationsRoute: typeof ReclamationsRoute
+  ServiceClientRoute: typeof ServiceClientRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -82,6 +92,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ReclamationsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/service-client': {
+      id: '/service-client'
+      path: '/service-client'
+      fullPath: '/service-client'
+      preLoaderRoute: typeof ServiceClientRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -89,6 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DashboardRoute: DashboardRoute,
   ReclamationsRoute: ReclamationsRoute,
+  ServiceClientRoute: ServiceClientRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
