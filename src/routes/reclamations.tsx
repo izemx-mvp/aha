@@ -19,10 +19,10 @@ type Search = {
 
 export const Route = createFileRoute("/reclamations")({
   validateSearch: (search: Record<string, unknown>): Search => ({
-    rec: typeof search.rec === "string" ? search.rec : undefined,
-    urgence: typeof search.urgence === "string" ? search.urgence : undefined,
-    statut: typeof search.statut === "string" ? search.statut : undefined,
-    est: typeof search.est === "string" ? search.est : undefined,
+    rec: typeof search["rec"] === "string" ? search["rec"] : undefined,
+    urgence: typeof search["urgence"] === "string" ? search["urgence"] : undefined,
+    statut: typeof search["statut"] === "string" ? search["statut"] : undefined,
+    est: typeof search["est"] === "string" ? search["est"] : undefined,
   }),
   head: () => ({
     meta: [
