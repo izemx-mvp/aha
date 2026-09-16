@@ -84,7 +84,7 @@ function ComplaintsPage() {
     const rank = { Urgent: 0, Moyen: 1, Faible: 2 } as const;
     return complaints
       .filter((c) => {
-        if (q && !`${c.client} ${c.message} ${nameOf(c.estId)}`.toLowerCase().includes(q)) return false;
+        if (q && !`${c.client} ${c.message} ${c.category} ${c.channel} ${nameOf(c.estId)}`.toLowerCase().includes(q)) return false;
         if (est !== "all" && c.estId !== est) return false;
         if (category !== "all" && c.category !== category) return false;
         if (urgency !== "all" && c.urgency !== urgency) return false;

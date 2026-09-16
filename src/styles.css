@@ -168,7 +168,7 @@
   border-radius: 9999px;
   background: radial-gradient(
     circle at 30% 30%,
-    color-mix(in oklab, var(--primary-glow) 20%, transparent),
+    color-mix(in oklab, var(--primary-glow) 30%, transparent),
     transparent 68%
   );
   filter: blur(30px);
@@ -184,7 +184,7 @@
   border-radius: 9999px;
   background: radial-gradient(
     circle at 60% 60%,
-    color-mix(in oklab, var(--accent-glow) 22%, transparent),
+    color-mix(in oklab, var(--accent-glow) 32%, transparent),
     transparent 70%
   );
   filter: blur(30px);
@@ -200,7 +200,7 @@
   border-radius: 9999px;
   background: radial-gradient(
     circle at 50% 50%,
-    color-mix(in oklab, var(--accent) 16%, transparent),
+    color-mix(in oklab, var(--accent) 22%, transparent),
     transparent 70%
   );
   filter: blur(40px);
